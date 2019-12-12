@@ -13,9 +13,11 @@ export default class CriadordeMemes extends Component {
         <View style={style.inputArea}>
           <TextInput style={style.input} placeholder="Digite o texto seu mame" />
         </View>
-        <View>
+
+        <View style={style.area}>
 
         </View>
+
       </View>
     );
   }
@@ -43,6 +45,9 @@ const styles = StyleSheet.create({
     height: 40,
     margin: 20,
     padding: 10
+  },
+  area: {
+
   }
 
 });
