@@ -3,6 +3,17 @@ import { View, Text, StyleSheet, TextInput, Image } from 'react-native';
 
 
 export default class CriadordeMemes extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { texto1: '' };
+
+
+    this.escrever = this.escrever.bind(this);
+  }
+  escrever(t) {
+    let s = this.state;
+    s.texto1 = t;
+  }
   render() {
     return (
       <View style={styles.body}>
@@ -11,13 +22,12 @@ export default class CriadordeMemes extends Component {
         </View>
 
         <View style={style.inputArea}>
-          <TextInput style={style.input} placeholder="Digite o texto seu mame" />
+          <TextInput style={style.input} placeholder="Digite o texto do seu mame" onChangeText={this.escrever} />
         </View>
 
         <View style={style.area}>
-          <Text style={[style.texto, style.texto1]}></Text>
+          <Text style={[style.texto, style.texto1]}>{this.state.texto1.toUpperCase()}</Text>
           <Image style={style.img} source={require('./images/madruga.jpg')} />
-          <Text style={[style.texto, style.texto2]}></Text>
         </View>
 
       </View>
@@ -56,7 +66,21 @@ const styles = StyleSheet.create({
   img: {
     width: 300,
     height: 300,
-  }
+    marginTop: -70,
+    zIndex: 0
+  },
+  texto: {
+    fontSize: 25,
+    color: '#FFFFFF',
+    padding: 10,
+    backgroundColor: 'transparent',
+    fontWeight: 'bold',
+    textAlign: 'center',
+    height: 70
+  },
+  texto1: {
+    zIndex: 1
 
+  }
 
 });
