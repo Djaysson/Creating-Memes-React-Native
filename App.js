@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, TextInput } from 'react-native';
+import { View, Text, StyleSheet, TextInput, Image } from 'react-native';
 
 
 export default class CriadordeMemes extends Component {
@@ -15,7 +15,9 @@ export default class CriadordeMemes extends Component {
         </View>
 
         <View style={style.area}>
-
+          <Text style={[style.texto, style.texto1]}></Text>
+          <Image style={style.img} source={require('./images/madruga.jpg')} />
+          <Text style={[style.texto, style.texto2]}></Text>
         </View>
 
       </View>
@@ -47,7 +49,14 @@ const styles = StyleSheet.create({
     padding: 10
   },
   area: {
-
+    width: 300,
+    height: 300,
+    marginTop: 10
+  },
+  img: {
+    width: 300,
+    height: 300,
   }
+
 
 });
